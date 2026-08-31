@@ -5,9 +5,11 @@
 
 export const version = '2.0.0-alpha.0';
 
-// Components will be exported here
-// export { Block } from './components/Block';
-// export { Button } from './components/Button';
-// etc.
+// Export components
+export { Block } from './components/Block';
+export type { BlockProps } from './components/Block';
+
+export { Text } from './components/Text';
+export type { TextProps } from './components/Text';
 
 console.log(`@htmplar/core v${version} loaded`);
