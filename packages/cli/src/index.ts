@@ -5,9 +5,8 @@
 
 export const version = '2.0.0-alpha.0';
 
-// CLI commands will be exported here
-// export { dev } from './commands/dev';
-// export { build } from './commands/build';
-// etc.
-
-console.log(`@htmplar/cli v${version} loaded`);
+// Export commands
+export { startDevServer } from './commands/dev';
+export { buildEmails } from './commands/build';
+export { startPreviewServer } from './commands/preview';
+export { initProject } from './commands/init';
