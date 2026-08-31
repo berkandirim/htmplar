@@ -168,3 +168,14 @@ typings/
 
 # next.js build output
 .next
+
+# Monorepo specific
+dist/
+lib/
+*.tsbuildinfo
+.turbo/
+.changeset/
+pnpm-lock.yaml
+
+# Testing
+*.lcov
