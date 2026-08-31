@@ -1,6 +1,10 @@
-# HTMplar v2.0 🚀
+<p align="center">
+  <img src="https://raw.githubusercontent.com/adidas/htmplar/master/.github/images/logo.png" alt="HTMplar Logo" width="200" />
+</p>
 
-> Modern email development with React, TypeScript, and Vite
+<h1 align="center">HTMplar v2.0</h1>
+
+<p align="center">Modern email development with React, TypeScript, and Vite</p>
 
 [![CI](https://github.com/adidas/htmplar/workflows/CI/badge.svg)](https://github.com/adidas/htmplar/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
