@@ -19,7 +19,6 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "incremental": true,
     "noEmit": false
   },
   "exclude": ["node_modules", "dist", "lib", "coverage"]
