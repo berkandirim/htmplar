@@ -43,37 +43,39 @@ export async function buildEmails(options: BuildOptions) {
 
     // Build each email
     console.log('');
+    let successCount = 0;
+    let failCount = 0;
+
     for (const file of files) {
       const name = basename(file, extname(file));
       const buildSpinner = ora(`Building ${name}...`).start();
 
       try {
-        // For now, just create a placeholder
-        // TODO: Actually render the emails
+        const { renderEmailFromFile } = await import('../utils/renderEmail.js');
+        const html = await renderEmailFromFile(file);
+
         const outputPath = join(outputDir, `${name}.html`);
-        await writeFile(
-          outputPath,
-          `<!DOCTYPE html>
-<html>
-<head>
-  <title>${name}</title>
-</head>
-<body>
-  <p>Email: ${name}</p>
-  <p>TODO: Implement actual rendering</p>
-</body>
-</html>`
-        );
+        await writeFile(outputPath, html, 'utf-8');
 
         buildSpinner.succeed(chalk.green(`${name}.html`));
+        successCount++;
       } catch (error) {
         buildSpinner.fail(chalk.red(`Failed to build ${name}`));
-        console.error(error);
+        if (error instanceof Error) {
+          console.error(chalk.gray(`  ${error.message}`));
+        }
+        failCount++;
       }
     }
 
     console.log('');
-    console.log(chalk.green(`✅ Built ${files.length} email(s) to ${options.output}/`));
+    if (successCount > 0) {
+      console.log(chalk.green(`✅ Built ${successCount} email(s) to ${options.output}/`));
+    }
+    if (failCount > 0) {
+      console.log(chalk.yellow(`⚠️  ${failCount} email(s) failed to build`));
+      process.exit(1);
+    }
   } catch (error) {
     spinner.fail('Build failed');
     throw error;
