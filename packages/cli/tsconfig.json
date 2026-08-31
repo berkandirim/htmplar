@@ -7,13 +7,5 @@
     "types": ["node"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "tests"],
-  "references": [
-    {
-      "path": "../core"
-    },
-    {
-      "path": "../renderer"
-    }
-  ]
+  "exclude": ["node_modules", "dist", "tests"]
 }
