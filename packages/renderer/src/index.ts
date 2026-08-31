@@ -5,9 +5,11 @@
 
 export const version = '2.0.0-alpha.0';
 
-// Renderer functions will be exported here
-// export { renderToEmail } from './render';
-// export { inlineStyles } from './inline-styles';
-// etc.
+// Export rendering functions
+export { renderToString, renderToEmail, wrapInDocument } from './render';
+export type { RenderOptions } from './render';
+
+// Export base styles
+export { getBaseStyles } from './styles';
 
 console.log(`@htmplar/renderer v${version} loaded`);
