@@ -1,8 +1,10 @@
 import { renderToEmail, getBaseStyles } from '@htmplar/renderer';
 import type { ReactElement } from 'react';
+import { inlineCss } from './inlineCss.js';
 
 interface RenderEmailOptions {
   includeBaseStyles?: boolean;
+  inlineCss?: boolean;
   minify?: boolean;
 }
 
@@ -10,7 +12,7 @@ export async function renderEmailFromFile(
   filePath: string,
   options: RenderEmailOptions = {}
 ): Promise<string> {
-  const { includeBaseStyles = true } = options;
+  const { includeBaseStyles = true, inlineCss: shouldInline = true } = options;
 
   try {
     // Dynamically import the email component
@@ -25,10 +27,19 @@ export async function renderEmailFromFile(
     const element = Component({}) as ReactElement;
 
     // Render to email HTML
-    const html = renderToEmail(element, {
+    let html = renderToEmail(element, {
       styles: includeBaseStyles ? getBaseStyles() : '',
       includeDoctype: true,
     });
+
+    // Inline CSS for email compatibility
+    if (shouldInline) {
+      html = inlineCss(html, {
+        removeStyleTags: false, // Keep style tags for media queries
+        preserveMediaQueries: true,
+        preserveFontFaces: true,
+      });
+    }
 
     return html;
   } catch (error) {
