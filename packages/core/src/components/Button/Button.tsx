@@ -114,12 +114,7 @@ export function Button({
               <w:anchorlock/>
               <center>
             <![endif]*/}
-            <a
-              href={href}
-              style={buttonStyle}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={href} style={buttonStyle} target="_blank" rel="noopener noreferrer">
               {children}
             </a>
             {/*[if mso]>

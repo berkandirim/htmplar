@@ -36,9 +36,9 @@ function CompleteEmail() {
 
           <Block padding="0 20px 20px">
             <Text fontSize={16} color="#666666" lineHeight={1.6}>
-              We've completely rewritten HTMplar with modern tooling to make email development
-              a joy. Write emails in React with TypeScript, and get production-ready HTML
-              that works across all email clients.
+              We've completely rewritten HTMplar with modern tooling to make email development a
+              joy. Write emails in React with TypeScript, and get production-ready HTML that works
+              across all email clients.
             </Text>
           </Block>
 

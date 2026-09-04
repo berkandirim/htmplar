@@ -38,10 +38,7 @@ export async function initProject(name?: string) {
       },
     };
 
-    await writeFile(
-      join(projectDir, 'package.json'),
-      JSON.stringify(packageJson, null, 2)
-    );
+    await writeFile(join(projectDir, 'package.json'), JSON.stringify(packageJson, null, 2));
 
     // Create example email
     const exampleEmail = `import React from 'react';

@@ -35,15 +35,7 @@ export interface ImageProps {
 /**
  * Image component - Email-safe responsive images
  */
-export function Image({
-  src,
-  alt,
-  width,
-  height,
-  align = 'center',
-  className,
-  title,
-}: ImageProps) {
+export function Image({ src, alt, width, height, align = 'center', className, title }: ImageProps) {
   const imgStyle: React.CSSProperties = {
     display: 'block',
     border: 0,
@@ -56,23 +48,11 @@ export function Image({
   };
 
   return (
-    <table
-      role="presentation"
-      border={0}
-      cellPadding={0}
-      cellSpacing={0}
-      width="100%"
-    >
+    <table role="presentation" border={0} cellPadding={0} cellSpacing={0} width="100%">
       <tbody>
         <tr>
           <td align={align} valign="top">
-            <img
-              src={src}
-              alt={alt}
-              title={title}
-              style={imgStyle}
-              className={className}
-            />
+            <img src={src} alt={alt} title={title} style={imgStyle} className={className} />
           </td>
         </tr>
       </tbody>

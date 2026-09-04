@@ -38,9 +38,7 @@ export default function AllComponentsDemo() {
 
           <Spacer height={20} />
 
-          <Button href="https://github.com/adidas/htmplar">
-            Get Started →
-          </Button>
+          <Button href="https://github.com/adidas/htmplar">Get Started →</Button>
         </Block>
       </Block>
 
@@ -77,16 +75,14 @@ export default function AllComponentsDemo() {
 
         <Heading level={4}>✅ Email-Safe Components</Heading>
         <Text>
-          All components use table-based layouts for maximum compatibility with email
-          clients including Outlook.
+          All components use table-based layouts for maximum compatibility with email clients
+          including Outlook.
         </Text>
 
         <Spacer height={15} />
 
         <Heading level={4}>✅ TypeScript Support</Heading>
-        <Text>
-          Full type safety with IntelliSense support for all props and components.
-        </Text>
+        <Text>Full type safety with IntelliSense support for all props and components.</Text>
 
         <Spacer height={15} />
 

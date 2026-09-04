@@ -4,7 +4,9 @@ const { renderToStaticMarkup } = require('react-dom/server');
 
 // Simple inline test
 const html = renderToStaticMarkup(
-  React.createElement('div', { style: { padding: '20px' } },
+  React.createElement(
+    'div',
+    { style: { padding: '20px' } },
     React.createElement('h1', null, 'HTMplar v2.0 Test'),
     React.createElement('p', null, 'If you can see this, React rendering works!')
   )

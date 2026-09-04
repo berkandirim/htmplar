@@ -11,12 +11,7 @@ export interface RowProps {
  * Row component for horizontal layout containers
  * Works with Column components to create responsive grid layouts
  */
-export function Row({
-  children,
-  backgroundColor,
-  padding: _padding,
-  style = {},
-}: RowProps) {
+export function Row({ children, backgroundColor, padding: _padding, style = {} }: RowProps) {
   const tableStyle: CSSProperties = {
     width: '100%',
     backgroundColor,

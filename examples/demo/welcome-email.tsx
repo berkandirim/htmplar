@@ -13,8 +13,8 @@ function WelcomeEmail() {
 
         <Block padding={20}>
           <Text fontSize={16} color="#666666" lineHeight={1.6}>
-            Thank you for trying out HTMplar v2.0. We've completely rewritten the library with modern
-            tooling including TypeScript, Vite, and Turborepo.
+            Thank you for trying out HTMplar v2.0. We've completely rewritten the library with
+            modern tooling including TypeScript, Vite, and Turborepo.
           </Text>
         </Block>
 
