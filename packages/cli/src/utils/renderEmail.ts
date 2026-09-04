@@ -1,4 +1,4 @@
-import { renderToEmail, getBaseStyles } from '@htmplar/renderer';
+import { renderToEmail, getBaseStyles } from '@adidas/htmplar-renderer';
 import type { ReactElement } from 'react';
 import { inlineCss } from './inlineCss.js';
 

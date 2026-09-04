@@ -1,5 +1,5 @@
 /**
- * @htmplar/core - React component library for email development
+ * @adidas/htmplar-core - React component library for email development
  * @packageDocumentation
  */
 
@@ -39,4 +39,4 @@ export type { ColumnProps } from './components/Column';
 export { Container } from './components/Container';
 export type { ContainerProps } from './components/Container';
 
-console.log(`@htmplar/core v${version} loaded`);
+console.log(`@adidas/htmplar-core v${version} loaded`);

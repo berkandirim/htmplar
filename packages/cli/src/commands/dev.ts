@@ -23,8 +23,8 @@ export async function startDevServer(options: DevOptions) {
       plugins: [react()],
       resolve: {
         alias: {
-          '@htmplar/core': path.resolve(process.cwd(), 'node_modules/@htmplar/core'),
-          '@htmplar/renderer': path.resolve(process.cwd(), 'node_modules/@htmplar/renderer'),
+          '@adidas/htmplar-core': path.resolve(process.cwd(), 'node_modules/@adidas/htmplar-core'),
+          '@adidas/htmplar-renderer': path.resolve(process.cwd(), 'node_modules/@adidas/htmplar-renderer'),
         },
       },
     });

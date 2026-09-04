@@ -1,5 +1,5 @@
 /**
- * @htmplar/cli - Command line interface
+ * @adidas/htmplar-cli - Command line interface
  * @packageDocumentation
  */
 

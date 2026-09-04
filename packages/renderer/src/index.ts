@@ -1,5 +1,5 @@
 /**
- * @htmplar/renderer - Email rendering engine
+ * @adidas/htmplar-renderer - Email rendering engine
  * @packageDocumentation
  */
 
@@ -12,4 +12,4 @@ export type { RenderOptions } from './render';
 // Export base styles
 export { getBaseStyles } from './styles';
 
-console.log(`@htmplar/renderer v${version} loaded`);
+console.log(`@adidas/htmplar-renderer v${version} loaded`);
