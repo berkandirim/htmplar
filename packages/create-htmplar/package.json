@@ -1,5 +1,5 @@
 {
-  "name": "@htmplar/create-htmplar",
+  "name": "@adidas/create-htmplar",
   "version": "2.0.0-alpha.0",
   "description": "Scaffold new HTMplar projects",
   "main": "./dist/index.js",

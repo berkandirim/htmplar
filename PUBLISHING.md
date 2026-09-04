@@ -41,9 +41,40 @@ We have two GitHub Actions workflows for publishing:
 - Following semver strictly
 - Team coordination
 
-## 🔐 Setup: npm Token
+## 🔐 Setup: npm Token & Organization Access
 
-Both workflows require an `NPM_TOKEN` secret:
+### Prerequisites: @adidas npm Organization Membership
+
+**IMPORTANT**: Before publishing, you need to be a member of the `@adidas` npm organization.
+
+#### Check Your Membership
+
+```bash
+npm org ls adidas --json | jq '.[] | select(.user == "YOUR_NPM_USERNAME")'
+```
+
+If you see your username, you're good! If not, you need to be added.
+
+#### Request Access
+
+An existing `@adidas` npm organization admin needs to add you:
+
+```bash
+# Admin runs this command:
+npm org add adidas YOUR_NPM_USERNAME --role developer
+```
+
+**Roles**:
+- `developer` - Can publish packages (recommended for contributors)
+- `admin` - Can manage members and settings
+- `owner` - Full control
+
+If you don't have access, contact:
+- Repository maintainers
+- adidas npm organization admins
+- Check who has access: `npm org ls adidas`
+
+---
 
 ### Creating npm Access Token
 
@@ -74,7 +105,7 @@ Both workflows require an `NPM_TOKEN` secret:
 ### Token Permissions
 
 The npm token needs:
-- ✅ Publish access to `@htmplar/*` packages
+- ✅ Publish access to `@adidas/*` packages (as member of @adidas org)
 - ✅ Automation type (recommended for CI/CD)
 
 ## 📋 Publishing Workflows
@@ -89,11 +120,11 @@ Use this for the current v2.0.0-alpha release:
    - Version bump: (leave empty)
    - npm tag: `alpha`
    - Dry run: `false`
-4. **Done!** Packages published as `@htmplar/core@2.0.0-alpha.0`
+4. **Done!** Packages published as `@adidas/htmplar-core@2.0.0-alpha.0`
 
 Users can install with:
 ```bash
-npm install @htmplar/core@alpha
+npm install @adidas/htmplar-core@alpha
 ```
 
 ### Test Before Publishing (Dry Run)
@@ -125,10 +156,10 @@ This will:
 
 | Tag | When to Use | Install Command |
 |-----|-------------|-----------------|
-| `alpha` | Early development, unstable | `npm i @htmplar/core@alpha` |
-| `beta` | Feature complete, testing | `npm i @htmplar/core@beta` |
-| `next` | Pre-release for testing | `npm i @htmplar/core@next` |
-| `latest` | Stable production release | `npm i @htmplar/core` |
+| `alpha` | Early development, unstable | `npm i @adidas/htmplar-core@alpha` |
+| `beta` | Feature complete, testing | `npm i @adidas/htmplar-core@beta` |
+| `next` | Pre-release for testing | `npm i @adidas/htmplar-core@next` |
+| `latest` | Stable production release | `npm i @adidas/htmplar-core` |
 
 **Current Status**: v2.0.0-alpha.0 → Use `alpha` tag
 
@@ -167,18 +198,18 @@ After publishing:
 
 ```bash
 # Check if packages are live
-npm view @htmplar/core
-npm view @htmplar/renderer
-npm view @htmplar/cli
-npm view @htmplar/create-htmplar
+npm view @adidas/htmplar-core
+npm view @adidas/htmplar-renderer
+npm view @adidas/htmplar-cli
+npm view @adidas/create-htmplar
 
 # Check specific version
-npm view @htmplar/core@alpha
+npm view @adidas/htmplar-core@alpha
 
 # Test installation
 mkdir test-project && cd test-project
 npm init -y
-npm install @htmplar/core@alpha
+npm install @adidas/htmplar-core@alpha
 ```
 
 ## 🐛 Troubleshooting
@@ -195,7 +226,7 @@ npm error need auth This command requires you to be logged in.
 ### "403 Forbidden" Error
 
 ```
-npm error 403 Forbidden - PUT https://registry.npmjs.org/@htmplar/core
+npm error 403 Forbidden - PUT https://registry.npmjs.org/@adidas/htmplar-core
 ```
 
 **Fixes**:
@@ -206,7 +237,7 @@ npm error 403 Forbidden - PUT https://registry.npmjs.org/@htmplar/core
 ### "Package name not available" Error
 
 ```
-npm error 404 '@htmplar/core' is not in the npm registry.
+npm error 404 '@adidas/htmplar-core' is not in the npm registry.
 ```
 
 **Fix**: Package names are available! This is just a check. Proceed with publish.
@@ -214,10 +245,10 @@ npm error 404 '@htmplar/core' is not in the npm registry.
 ### Packages Not Appearing
 
 After publishing, wait 1-2 minutes for npm's CDN to update. Check:
-- https://www.npmjs.com/package/@htmplar/core
-- https://www.npmjs.com/package/@htmplar/renderer
-- https://www.npmjs.com/package/@htmplar/cli
-- https://www.npmjs.com/package/@htmplar/create-htmplar
+- https://www.npmjs.com/package/@adidas/htmplar-core
+- https://www.npmjs.com/package/@adidas/htmplar-renderer
+- https://www.npmjs.com/package/@adidas/htmplar-cli
+- https://www.npmjs.com/package/@adidas/create-htmplar
 
 ## 🎓 Best Practices
 

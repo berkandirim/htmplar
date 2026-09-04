@@ -101,15 +101,15 @@ git push origin rewrite/monorepo-setup
 # Wait 1-2 minutes for npm CDN
 
 # Check packages are live
-npm view @htmplar/core@alpha
-npm view @htmplar/renderer@alpha
-npm view @htmplar/cli@alpha
-npm view @htmplar/create-htmplar@alpha
+npm view @adidas/htmplar-core@alpha
+npm view @adidas/htmplar-renderer@alpha
+npm view @adidas/htmplar-cli@alpha
+npm view @adidas/create-htmplar@alpha
 
 # Test installation
 mkdir /tmp/test-htmplar-install && cd /tmp/test-htmplar-install
 npm init -y
-npm install @htmplar/core@alpha @htmplar/renderer@alpha
+npm install @adidas/htmplar-core@alpha @adidas/htmplar-renderer@alpha
 ```
 
 ### Step 7: Test End-to-End
@@ -117,7 +117,7 @@ npm install @htmplar/core@alpha @htmplar/renderer@alpha
 ```bash
 # Test project scaffolding
 cd /tmp
-npx @htmplar/cli@alpha init my-test-project
+npx @adidas/htmplar-cli@alpha init my-test-project
 cd my-test-project
 npm install
 npm run build

@@ -25,13 +25,13 @@ export async function initProject(name?: string) {
         preview: 'htmplar preview',
       },
       dependencies: {
-        '@htmplar/core': '^2.0.0-alpha.0',
-        '@htmplar/renderer': '^2.0.0-alpha.0',
+        '@adidas/htmplar-core': '^2.0.0-alpha.0',
+        '@adidas/htmplar-renderer': '^2.0.0-alpha.0',
         react: '^18.3.1',
         'react-dom': '^18.3.1',
       },
       devDependencies: {
-        '@htmplar/cli': '^2.0.0-alpha.0',
+        '@adidas/htmplar-cli': '^2.0.0-alpha.0',
         '@types/react': '^18.3.8',
         '@types/react-dom': '^18.3.0',
         typescript: '^5.6.2',
@@ -42,7 +42,7 @@ export async function initProject(name?: string) {
 
     // Create example email
     const exampleEmail = `import React from 'react';
-import { Block, Text, Button } from '@htmplar/core';
+import { Block, Text, Button } from '@adidas/htmplar-core';
 
 export default function WelcomeEmail() {
   return (

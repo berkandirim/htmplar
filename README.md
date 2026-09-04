@@ -58,8 +58,8 @@ HTMplar is a developer-friendly React component library for building email-safe 
    const htmplar = require('htmplar');
    
    // v2.0
-   import { Block, Text, Button } from '@htmplar/core';
-   import { renderToEmail } from '@htmplar/renderer';
+   import { Block, Text, Button } from '@adidas/htmplar-core';
+   import { renderToEmail } from '@adidas/htmplar-renderer';
    ```
 
 ### Why the Complete Rewrite?
@@ -86,17 +86,17 @@ This is a monorepo containing multiple packages:
 
 | Package | Description | Version |
 |---------|-------------|---------|
-| [@htmplar/core](./packages/core) | React component library | `2.0.0-alpha.0` |
-| [@htmplar/renderer](./packages/renderer) | Email rendering engine | `2.0.0-alpha.0` |
-| [@htmplar/cli](./packages/cli) | Command line interface | `2.0.0-alpha.0` |
-| [@htmplar/create-htmplar](./packages/create-htmplar) | Project scaffolder | `2.0.0-alpha.0` |
+| [@adidas/htmplar-core](./packages/core) | React component library | `2.0.0-alpha.0` |
+| [@adidas/htmplar-renderer](./packages/renderer) | Email rendering engine | `2.0.0-alpha.0` |
+| [@adidas/htmplar-cli](./packages/cli) | Command line interface | `2.0.0-alpha.0` |
+| [@adidas/create-htmplar](./packages/create-htmplar) | Project scaffolder | `2.0.0-alpha.0` |
 
 ## 🚀 Quick Start (Coming Soon)
 
 ### Create a New Project
 
 ```bash
-npx @htmplar/create-htmplar my-email-project
+npx @adidas/create-htmplar my-email-project
 cd my-email-project
 npm run dev
 ```
@@ -104,14 +104,14 @@ npm run dev
 ### Or Install in Existing Project
 
 ```bash
-npm install @htmplar/core @htmplar/renderer
+npm install @adidas/htmplar-core @adidas/htmplar-renderer
 ```
 
 ## 📖 Usage Example (Coming Soon)
 
 ```tsx
-import { Block, Button, Text } from '@htmplar/core';
-import { renderToEmail } from '@htmplar/renderer';
+import { Block, Button, Text } from '@adidas/htmplar-core';
+import { renderToEmail } from '@adidas/htmplar-renderer';
 
 function WelcomeEmail() {
   return (

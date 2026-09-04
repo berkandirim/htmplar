@@ -1,5 +1,5 @@
 {
-  "name": "@htmplar/renderer",
+  "name": "@adidas/htmplar-renderer",
   "version": "2.0.0-alpha.0",
   "description": "Email rendering engine for HTMplar",
   "main": "./dist/index.js",
@@ -24,7 +24,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@htmplar/core": "*",
+    "@adidas/htmplar-core": "*",
     "html-minifier-terser": "^7.2.0",
     "juice": "^10.0.1",
     "posthtml": "^0.16.6",
