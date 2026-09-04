@@ -21,6 +21,65 @@ HTMplar is a developer-friendly React component library for building email-safe 
 - 📱 **Responsive** - Mobile-first, works on all devices
 - 📧 **Email Client Compatible** - Tested on 20+ email clients including Outlook
 
+## 🔄 Migration Guide (v1.0 → v2.0)
+
+**⚠️ Important:** v2.0 is a complete rewrite and is **not backward compatible** with v1.0.
+
+### What Changed?
+
+| Aspect | v1.0 | v2.0 |
+|--------|------|------|
+| **Architecture** | Single package | Monorepo (4 packages) |
+| **Language** | JavaScript | TypeScript (strict mode) |
+| **Build System** | Custom | Vite + tsup |
+| **Styling** | Inline styles | Vanilla Extract CSS |
+| **Module System** | CommonJS | ESM + CJS dual build |
+| **Package Manager** | npm | npm workspaces + Turborepo |
+| **Testing** | None | Vitest + Testing Library |
+
+### Migration Steps
+
+**If you're using v1.0 (stable):**
+- ✅ **Keep using v1.0** - It's on the `master` branch and still maintained
+- The v1.0 package name may differ from v2.0 packages
+
+**If you want to try v2.0 (alpha):**
+
+1. **Start fresh** - v2.0 uses a completely different API
+2. **Create a new project**:
+   ```bash
+   # After packages are published
+   npx @htmplar/create-htmplar my-new-project
+   ```
+3. **Rewrite components** - Components use new React-based syntax
+4. **Update imports**:
+   ```tsx
+   // v1.0 (example - actual v1 API may vary)
+   const htmplar = require('htmplar');
+   
+   // v2.0
+   import { Block, Text, Button } from '@htmplar/core';
+   import { renderToEmail } from '@htmplar/renderer';
+   ```
+
+### Why the Complete Rewrite?
+
+v2.0 addresses technical debt and modernizes the entire stack:
+- **Type Safety**: Full TypeScript with strict mode catches errors at build time
+- **Developer Experience**: Hot reload, better error messages, React DevTools support
+- **Maintainability**: Modular architecture, comprehensive tests, modern tooling
+- **Performance**: Faster builds with Turborepo, optimized rendering
+- **Ecosystem**: Uses modern standards (ESM, Vite, React 18)
+
+See [MODERNIZATION_PLAN.md](./MODERNIZATION_PLAN.md) for complete details.
+
+### Need v1.0?
+
+The stable v1.0 version is available on the `master` branch:
+```bash
+git checkout master
+```
+
 ## 📦 Packages
 
 This is a monorepo containing multiple packages:
