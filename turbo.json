@@ -22,7 +22,7 @@
       "persistent": true
     },
     "typecheck": {
-      "dependsOn": []
+      "dependsOn": ["^build"]
     },
     "clean": {
       "cache": false

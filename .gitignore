@@ -179,3 +179,4 @@ pnpm-lock.yaml
 
 # Testing
 *.lcov
+.vitest/
